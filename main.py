@@ -10,6 +10,7 @@ from question_model import *
 # Importamos todos los elementos del módulo quiz_brain
 from quiz_brain import *
 
+from user_interface import QuizInterface
 
 
 # Creamos una lista vacía llamada question_bank, que sera una lista de objetos
@@ -30,11 +31,17 @@ for  diccionary in question_data:
 #  Imprimimos la respuesta asociada al primer objeto de la lista question_bank
 # print(question_bank[0].answer)    
 
+
 # Creamos un nuevo objeto de la clase QuizBrain y le pasamos la lista de preguntas question_bank
 quiz=QuizBrain(question_list=question_bank)
 
-# Mientras aún queden preguntas en el cuestionario
-while quiz.still_has_question():
+
+#creando objeto de la clase Quizinterface, recibe como paremetro el objeto de la clase QuizBrain
+quiz_interface=QuizInterface(quiz)
+
+
+# # Mientras aún queden preguntas en el cuestionario
+# while quiz.still_has_question():
     
-    # Pasamos a la siguiente pregunta
-    quiz.next_question()
+#     # Pasamos a la siguiente pregunta
+#     quiz.next_question()
