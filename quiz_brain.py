@@ -38,17 +38,18 @@ class QuizBrain():
     def next_question(self ):
         
         # Obtenemos la pregunta actual de la lista de preguntas
-        current_question = self.question_list[self.question_number]
+        self.current_question = self.question_list[self.question_number]
         
         # Incrementamos el número de pregunta
         self.question_number +=1
         
-        return f"Q.{self.question_number}: {current_question.text}"
+        return f"Q.{self.question_number}: {self.current_question.text}"
         # # Solicitamos al usuario que responda la pregunta actual
-        # user_answer=input(f"Q.{self.question_number}: {current_question.text} (True/False): " )
+        # user_answer=input(f"Q.{self.question_number}: {self.current_question.text} (True/False): " )
         
-        # # Verificamos si la respuesta del usuario es correcta, y le pasamos los parametros, correct_answer es igual a current_questioon y current_questioon es una lista de objetos
-        # self.check_answer(user_answer, correct_answer=current_question.answer)
+        # # Verificamos si la respuesta del usuario es correcta, y le pasamos los parametros, correct_answer es igual a current_questioon 
+        # y current_questioon es una lista de objetos
+        # self.check_answer(user_answer, correct_answer=self.current_question.answer)
 
     # Método para verificar si la respuesta del usuario es correcta, recibe 2 parametros user_answer y correct_answer 
     def check_answer(self, user_answer, correct_answer):
@@ -58,6 +59,7 @@ class QuizBrain():
             
             # Imprimimos un mensaje indicando que la respuesta es correcta
             print("you got it right") 
+            
             # Incrementamos el puntaje
             self.score += 1 
             

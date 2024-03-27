@@ -33,11 +33,11 @@ class QuizInterface:
         
         
         #creando botones (true, false)
-        self.true_button=Button(image=true_photo, highlightthickness=0)
+        self.true_button=Button(image=true_photo, highlightthickness=0, command=self.answer_true)
         self.true_button.grid(row=2, column=0, padx=20, )
         
         
-        self.false_button=Button(image=false_photo, highlightthickness=0)
+        self.false_button=Button(image=false_photo, highlightthickness=0, command=self.answer_false)
         self.false_button.grid(row=2, column=1, padx=20, )
         
         
@@ -61,3 +61,33 @@ class QuizInterface:
         
         #actualizamos nuestro canvas con la nueva preguntilla
         self.canvas.itemconfigure(self.question_text, text=self.question)
+        
+    
+    #funcion que se llama cuando oprimo el boton "True" - "green checkmark"
+    def answer_true(self):
+        
+        #chequiamos si la respuesta del user es correcta o incorrecta, este metodo recibe 2 parametros user_answer y correct_answer 
+        self.quiz.check_answer(user_answer="True", correct_answer=self.quiz.current_question.answer)
+        
+        
+        #llamamos a la sgt pregunta
+        self.get_next_Question()
+        
+        
+        #actualizamos nuestro score, puntaje
+        self.score.config(text=self.quiz.score)
+        
+        
+        #funcion que se llama cuando oprimo el boton "False" - "Red mark"
+    def answer_false(self):
+        
+        #chequiamos si la respuesta del user es correcta o incorrecta, este metodo recibe 2 parametros user_answer y correct_answer 
+        self.quiz.check_answer(user_answer="False", correct_answer=self.quiz.current_question.answer)
+        
+        
+        #actualizamos nuestro score, puntaje
+        self.score.config(text=self.quiz.score)
+        
+        
+        #llamamos a la sgt pregunta
+        self.get_next_Question()
