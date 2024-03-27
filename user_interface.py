@@ -25,7 +25,7 @@ class QuizInterface:
         
         
         #creando texto donde iran nuestras preguntas
-        self.question_text=self.canvas.create_text(150, 125, text="Question", font=("Arial", 20, "italic"), fill=THEME_COLOR)
+        self.question_text=self.canvas.create_text(150, 125, text="Question", font=("Arial", 20, "italic"), fill=THEME_COLOR, width=280)
         
         
         true_photo=PhotoImage(file="images/true.png")
@@ -46,9 +46,18 @@ class QuizInterface:
         self.score.grid(row=0, column=1 )
         
         
+        #llamamos a la funcion de nuestras preguntas, para que al correr el codigo nos muestre una preguntilla 
+        self.get_next_Question()
+        
+        
         self.window.mainloop()
         
         
     def get_next_Question(self):
         
-        self.quiz.next_question()
+        #ya podemos acceder por medio de nuestra propiedad, a la funcion next_question() de la clase QuizBrain
+        self.question=self.quiz.next_question()
+        
+        
+        #actualizamos nuestro canvas con la nueva preguntilla
+        self.canvas.itemconfigure(self.question_text, text=self.question)
