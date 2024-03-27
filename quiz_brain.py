@@ -57,19 +57,23 @@ class QuizBrain():
         # Si la respuesta del usuario es igual a la respuesta correcta
         if user_answer.lower()==correct_answer.lower():
             
-            # Imprimimos un mensaje indicando que la respuesta es correcta
-            print("you got it right") 
-            
             # Incrementamos el puntaje
             self.score += 1 
             
-        else:
-            # Si la respuesta del usuario es incorrecta, imprimimos un mensaje indicando que la respuesta es incorrecta
-            print("That's wrong")
             
+            # Imprimimos un mensaje indicando que la respuesta es correcta
+            return True
+            
+            
+            
+        else:
+        
             # Imprimimos la respuesta correcta
             print(f"The correct answer was {correct_answer}")
             
+            
+            # Si la respuesta del usuario es incorrecta, imprimimos un mensaje indicando que la respuesta es incorrecta
+            return False
         # Imprimimos el puntaje actual y el número de la pregunta actual
         print(f"Your current score is {self.score}/ curent question {self.question_number}") 
            
