@@ -24,4 +24,4 @@ question_data=response.json()['results']
 
 
 
-print(question_data)
+# print(question_data)
