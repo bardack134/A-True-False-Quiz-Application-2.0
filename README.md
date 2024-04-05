@@ -12,7 +12,7 @@ OOP
 
 **APIs Used:**
 
-Open Trivia Database API: Used to get a set of true/false questions for the quiz.
+Open Trivia Database API: Used to get a set of true/false questions for the quiz. (https://the-trivia-api.com/docs/v2/)
 
 
 ![app img 1](https://github.com/bardack134/A-True-False-Quiz-Application-2.0/assets/142977989/4584c1a4-b53d-40c7-a65d-79c0ab5bd1c3)
