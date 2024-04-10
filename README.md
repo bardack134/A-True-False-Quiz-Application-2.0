@@ -20,7 +20,7 @@ The A-True-False-Quiz-Application-2.0 is a quiz application that presents the us
 - **OOP:** Object-Oriented Programming principles were used in the development of this application.
 
 ## APIs Used
-- **Open Trivia Database API:** Used to fetch a set of true/false questions for the quiz. More information can be found at Open Trivia Database API's official documentation.
+- **Open Trivia Database API:** Used to fetch a set of true/false questions for the quiz. More information can be found at https://the-trivia-api.com/docs/v2/.
 
 ## Screenshots
 
